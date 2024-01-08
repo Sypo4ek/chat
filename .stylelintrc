@@ -1,0 +1,83 @@
+{
+  "processors": [
+    "stylelint-processor-styled-components"
+  ],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-standard-scss",
+    "stylelint-config-styled-components",
+    "stylelint-config-rational-order",
+    "stylelint-prettier/recommended"
+  ],
+  "customSyntax": "postcss-styled-syntax",
+  "overrides": [
+    {
+      "files": [
+        "**/styled.ts",
+        "**/styles/*.ts"
+      ],
+      "customSyntax": "@stylelint/postcss-css-in-js",
+      "rules": {
+        "at-rule-no-unknown": true
+      }
+    }
+  ],
+  "plugins": [
+    "stylelint-prettier"
+  ],
+  "rules": {
+    "prettier/prettier": [
+      true,
+      {
+        "tabWidth": 2,
+        "printWidth": 80,
+        "useTabs": true,
+        "semi": false,
+        "endOfLine": "lf",
+        "bracketSameLine": false,
+        "singleAttributePerLine": true
+      }
+    ],
+    "selector-class-pattern": null,
+    "declaration-block-trailing-semicolon": "always",
+    "block-closing-brace-empty-line-before": "never",
+    "block-closing-brace-newline-after": "always",
+    "block-closing-brace-newline-before": "always",
+    "block-closing-brace-space-before": null,
+    "block-opening-brace-newline-after": null,
+    "block-opening-brace-space-after": null,
+    "block-opening-brace-space-before": "always",
+    "declaration-block-semicolon-newline-after": null,
+    "declaration-block-semicolon-space-after": null,
+    "declaration-block-semicolon-space-before": null,
+    "color-hex-case": "upper",
+    "color-hex-length": "long",
+    "no-duplicate-selectors": null,
+    "declaration-block-no-duplicate-properties": true,
+    "scss/operator-no-unspaced": null,
+    "number-no-trailing-zeros": true,
+    "length-zero-no-unit": true,
+    "number-leading-zero": "never",
+    "indentation": 2
+  },
+  "ignoreFiles": [
+    "**/__webpack__/*.ts",
+    "**/.eslintrc.js",
+    "**/services/*.ts",
+    "**/stores/**/*.ts",
+    "**/types/*.ts",
+    "**/utils/*.ts",
+    "**/mocks/*.ts",
+    "**/config.ts",
+    "**/*.tsx",
+    "**/type.ts",
+    "**/server.ts",
+    "**/resources.ts",
+    "**/constants.ts",
+    "**/index.ts",
+    "**/*.html",
+    "**/*.js",
+    "**/*.svg",
+    "**/*.d.ts"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", ".vscode"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "ESNext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "umd",
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react",
+    "emitDecoratorMetadata": true,
+    "downlevelIteration": true,
+    "checkJs": true,
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "paths": {
+      "*": ["types/*.d.ts"],
+      "@/*": ["src/*"]
+    },
+    "experimentalDecorators": true,
+    "useDefineForClassFields": true,
+    "strictPropertyInitialization": false
+  }
+}
