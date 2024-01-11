@@ -20,6 +20,7 @@ export default function Menu (){
   return (
     <div>
         <Link to="/"> game</Link>
+        <Link to="/inventory"> inventory </Link>
         <Link to="/settings"> settings </Link>
         <div onClick={handleClick}> logout </div>
     </div>

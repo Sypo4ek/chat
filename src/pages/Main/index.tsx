@@ -1,16 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { ContentWrapper, MenuWrapper, Wrapper } from "./styled";
 import Menu from "../Menu";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Settings from "../Settings";
-import Auth from "../Auth";
 import Game from "../Game";
 import { useContextToken } from "@/store/token";
+import Inventory from "../Inventory";
 
 
 export const Main  = ( ) => {
   const { token} = useContextToken()
-
+  
   return (
     <Wrapper>
       <MenuWrapper>
@@ -18,12 +18,9 @@ export const Main  = ( ) => {
       </MenuWrapper>
       <ContentWrapper>
         <Routes>
-          { token && 
-            <>
-              <Route path="/settings" element={<Settings/>}></Route>
-            </>
-          }
-          <Route path='/*' element={<Game/>}></Route>
+          <Route path="/inventory" element={<Inventory/>}/>
+          <Route path="/settings" element={<Settings/>} />
+          <Route path='/*' element={<Game/>}/>
         </Routes>
       </ContentWrapper>
     </Wrapper>

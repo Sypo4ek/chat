@@ -5,6 +5,8 @@ import React, {
   useCallback, 
   useContext, 
   useEffect, 
+  useLayoutEffect, 
+  useRef, 
   useState } from "react";
 import { request } from "@/services/request";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -20,6 +22,7 @@ export const Token = ({children}:{children: ReactNode}) =>{
   const [token, setToken] = useState<string| null>(null)
   const local = localStorage.getItem('pioneriaToken')
   const {pathname} = useLocation()
+  const pathRef = useRef<string>('')
   const navigate = useNavigate()
 
   const getCookieToken = useCallback(()=>{ 
@@ -54,12 +57,13 @@ export const Token = ({children}:{children: ReactNode}) =>{
   },[])
 
   useEffect(()=>{
-
-    if(!token || !local){
+    if(!token && !local){
+      pathRef.current = pathname
       navigate('/auth')
     }else {
       if(pathname.includes('auth')){
-        navigate('/')
+        navigate(pathRef.current.includes('auth') ? '/' : pathRef.current)
+        pathRef.current = '/'
       }
     }
     
