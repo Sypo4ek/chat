@@ -57,6 +57,7 @@ const Main = ():JSX.Element=> {
     const id = isAlwaysSendMain ? currentId : getRandomId()
     socket.send(JSON.stringify({ message: value, user: usersName[id], id }));
   },[socket, isAlwaysSendMain])
+  
   return    ( 
     <Wrapper>
       <Checkbox isActive={isAlwaysSendMain} onClick={()=>setIsAlwaysSendMain(prev=> !prev)}>
