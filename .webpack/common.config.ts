@@ -14,16 +14,7 @@ const plugins = [
   }),
   new HtmlWebpackPlugin({
     template: './public/index.html',
-    // favicon: './public/favicon.ico',
   }),
-  // new CopyWebpackPlugin({
-  //   patterns: [
-  //     {
-  //       from: path.resolve(__dirname, '..', 'src/assets/fonts'),
-  //       to: './fonts',
-  //     },
-  //   ],
-  // })
 ]
 
 return {
@@ -35,7 +26,6 @@ return {
     filename: '[name].[chunkhash].bundle.js',
     chunkFilename: 'chunk.bundle.[chunkhash].js',
     path: path.resolve(__dirname, '..', 'dist'),
-    publicPath: `/${envVars.APP_NAME}/`,
   },
   optimization: {
     runtimeChunk: {
