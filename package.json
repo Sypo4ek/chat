@@ -4,7 +4,9 @@
   "description": "1.  Установить зависимости     - `npm install` 2.  Запустить локальную сборку проекта      - `npm run start` 3. Локально все загрузиться само и проверить в разных браузерах",
   "main": "index.tsx",
   "scripts": {
-    "start": "webpack serve --hot --config .webpack/dev.config.ts & node server/index.js"
+    "start": "webpack serve --hot --config .webpack/dev.config.ts & node server/index.js",
+    "server": "node server/index.js",
+    "dev": "webpack serve --hot --config .webpack/dev.config.ts"
   },
   "author": "",
   "license": "ISC",

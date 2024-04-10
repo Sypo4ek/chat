@@ -7,6 +7,7 @@ type TForm = {
 
 export const Form  = ({onSubmit}:TForm) :JSX.Element => {
   const [state, setState] = useState<string>('');
+  
   const handleSubmit = useCallback((e?: any)=>{
     e?.preventDefault()
     if(!!state.trim().length){
@@ -14,6 +15,7 @@ export const Form  = ({onSubmit}:TForm) :JSX.Element => {
     }
     setState('')
   },[state])
+
   return  ( 
     <FormStyled onSubmit={handleSubmit}>
         <input

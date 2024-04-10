@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
-import dayjs from 'dayjs'
+import React, { memo } from "react";
 import { Card, ContentWrapper, Label, Message, Time, Wrapper } from "./styled";
 import { TMessage, currentId } from "@/index";
 
-export const List  = ({messages}:{messages:Array<TMessage>} ):JSX.Element => {
+type TList = {messages:Array<TMessage>}
+
+export const List  = memo(({messages}:TList) => {
   return (
     <Wrapper>
       <ContentWrapper>
@@ -20,4 +21,4 @@ export const List  = ({messages}:{messages:Array<TMessage>} ):JSX.Element => {
       </ContentWrapper>
     </Wrapper>
   )
-}
+})

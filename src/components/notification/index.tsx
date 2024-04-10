@@ -23,7 +23,11 @@ export const Notifications =  ({children}:{children: ReactNode}):JSX.Element => 
 
   return <Context.Provider value={{count: state, inc}}>
     <Wrapper>
-     {!!state &&  <Counter onClick={handleClear}>{state}</Counter>}
+      {!!state &&  
+        <Counter onClick={handleClear}>
+          {state}
+        </Counter>
+      }
     </Wrapper>
     {children}
   </Context.Provider>
